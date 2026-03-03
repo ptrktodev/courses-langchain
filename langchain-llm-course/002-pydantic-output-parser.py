@@ -38,7 +38,7 @@ prompt = prompt.partial(instructions=parser.get_format_instructions())
 
 chain = prompt | llm | parser 
 
-pergunta = "Quando é minhas ferias anuais e como posso agendá-las?"
+pergunta = "Quando é minhas ferias anuais e como posso agendá-las???"
 resultado = chain.invoke({"pergunta": pergunta})
 
 print(f"{type(resultado)}")

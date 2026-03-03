@@ -9,7 +9,7 @@ api_key = os.environ['OPENAI_API_KEY']
 llm = ChatOpenAI(model="gpt-4-0613", temperature=0.9)
 
 ChatTemplate = ChatPromptTemplate([    
-    ('system', 'You are a helpful assistant that helps users find information about movies.'),
+    ('system', 'You are a helpful assistant that helps users find information about movies and TV series.'),
     ('human', '{question}')
 ])
 
