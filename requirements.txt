@@ -8,3 +8,5 @@ pydantic
 tiktoken
 httpx
 requests
+rich
+tavily

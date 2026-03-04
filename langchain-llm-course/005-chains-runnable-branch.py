@@ -8,7 +8,7 @@ import os
 
 load_dotenv()
 
-api_key = os.environ['OPENAI_API_KEY']
+api_key = os.getenv('OPENAI_API_KEY')
 llm = ChatOpenAI(model="gpt-4-0613", temperature=0.9)
 load_dotenv()
 
@@ -38,9 +38,9 @@ Opções disponíveis:
 ]).partial(instructions=parser.get_format_instructions())
 
 user_branch = RunnableBranch(
-    (lambda x: x.escolha == 1, lambda rota: "Você escolheu ser atendido por uma IA."),
-    (lambda x: x.escolha == 2, lambda rota: "Você escolheu ser atendido por um Humano."),
-    RunnableLambda(default)
+    (lambda x: x.escolha == 1, lambda rota: f"Você escolheu ser atendido por uma IA. {rota.pensamento} {rota.confianca}"),
+    (lambda x: x.escolha == 2, lambda rota: f"Você escolheu ser atendido por um Humano. {rota.pensamento} {rota.confianca}"),
+    lambda rota:  'erro'
 )
 
 chain = prompt_ask | llm
