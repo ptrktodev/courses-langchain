@@ -2,10 +2,10 @@ from langchain.tools import tool
 from tavily import TavilyClient
 from langchain_openai import ChatOpenAI
 from langchain.agents import create_agent
-from dotenv import load_dotenv
 from langchain_core.messages import HumanMessage
-from rich.pretty import pprint
 import requests
+from rich.pretty import pprint
+from dotenv import load_dotenv
 import os
 
 load_dotenv()
@@ -118,7 +118,7 @@ tools_main = [sub_agent_math, sub_agent_utils]
 agent_main = create_agent(
     model=llm,
     tools=tools_main,
-    system_prompt="Você é um agente principal que delega tarefas para dois subagentes: um especializado em operações matemáticas e outro em informações sobre capitais e clima. Ao receber uma consulta, identifique o subagente adequado, delegue a tarefa e retorne a resposta de forma direta e objetiva."
+    system_prompt="Você é o agente principal que delega tarefas para dois subagentes: um especializado em operações matemáticas e outro em informações sobre capitais e clima. Ao receber uma consulta, identifique o subagente adequado, delegue a tarefa e retorne a resposta de forma direta e objetiva."
 )
 
 input_user = "Qual é a capital da França e calcula quanto é 15 + 3?"
