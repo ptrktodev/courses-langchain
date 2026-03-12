@@ -1,0 +1,95 @@
+{
+│   'messages': [
+│   │   HumanMessage(
+│   │   │   content='My name is Patrick and I am 23 years old.',
+│   │   │   additional_kwargs={},
+│   │   │   response_metadata={},
+│   │   │   id='1c112206-fb1d-4208-b101-38da0ecb4278'
+│   │   ),
+│   │   AIMessage(
+│   │   │   content='',
+│   │   │   additional_kwargs={'refusal': None},
+│   │   │   response_metadata={
+│   │   │   │   'token_usage': {
+│   │   │   │   │   'completion_tokens': 20,
+│   │   │   │   │   'prompt_tokens': 76,
+│   │   │   │   │   'total_tokens': 96,
+│   │   │   │   │   'completion_tokens_details': {
+│   │   │   │   │   │   'accepted_prediction_tokens': 0,
+│   │   │   │   │   │   'audio_tokens': 0,
+│   │   │   │   │   │   'reasoning_tokens': 0,
+│   │   │   │   │   │   'rejected_prediction_tokens': 0
+│   │   │   │   │   },
+│   │   │   │   │   'prompt_tokens_details': {'audio_tokens': 0, 'cached_tokens': 0}
+│   │   │   │   },
+│   │   │   │   'model_provider': 'openai',
+│   │   │   │   'model_name': 'gpt-4-0613',
+│   │   │   │   'system_fingerprint': None,
+│   │   │   │   'id': 'chatcmpl-DGpVdFUKCCSV7pAE11qOsOdBW0JQ0',
+│   │   │   │   'service_tier': 'default',
+│   │   │   │   'finish_reason': 'tool_calls',
+│   │   │   │   'logprobs': None
+│   │   │   },
+│   │   │   id='lc_run--019cc94a-5ff7-7d13-b92f-79f526a20332-0',
+│   │   │   tool_calls=[
+│   │   │   │   {
+│   │   │   │   │   'name': 'update_info_user',
+│   │   │   │   │   'args': {'name': 'Patrick', 'age': 23},
+│   │   │   │   │   'id': 'call_pcqhS8JYqd8yXyIf4n6nZ4b8',
+│   │   │   │   │   'type': 'tool_call'
+│   │   │   │   }
+│   │   │   ],
+│   │   │   invalid_tool_calls=[],
+│   │   │   usage_metadata={
+│   │   │   │   'input_tokens': 76,
+│   │   │   │   'output_tokens': 20,
+│   │   │   │   'total_tokens': 96,
+│   │   │   │   'input_token_details': {'audio': 0, 'cache_read': 0},
+│   │   │   │   'output_token_details': {'audio': 0, 'reasoning': 0}
+│   │   │   }
+│   │   ),
+│   │   ToolMessage(
+│   │   │   content='Successfully updated infos',
+│   │   │   name='update_info_user',
+│   │   │   id='45eff975-5e0e-47bb-8423-42cf810b7984',
+│   │   │   tool_call_id='call_pcqhS8JYqd8yXyIf4n6nZ4b8'
+│   │   ),
+│   │   AIMessage(
+│   │   │   content="Great, Patrick! I've updated your information. How can I assist you further?",
+│   │   │   additional_kwargs={'refusal': None},
+│   │   │   response_metadata={
+│   │   │   │   'token_usage': {
+│   │   │   │   │   'completion_tokens': 18,
+│   │   │   │   │   'prompt_tokens': 107,
+│   │   │   │   │   'total_tokens': 125,
+│   │   │   │   │   'completion_tokens_details': {
+│   │   │   │   │   │   'accepted_prediction_tokens': 0,
+│   │   │   │   │   │   'audio_tokens': 0,
+│   │   │   │   │   │   'reasoning_tokens': 0,
+│   │   │   │   │   │   'rejected_prediction_tokens': 0
+│   │   │   │   │   },
+│   │   │   │   │   'prompt_tokens_details': {'audio_tokens': 0, 'cached_tokens': 0}
+│   │   │   │   },
+│   │   │   │   'model_provider': 'openai',
+│   │   │   │   'model_name': 'gpt-4-0613',
+│   │   │   │   'system_fingerprint': None,
+│   │   │   │   'id': 'chatcmpl-DGpVfwu0AfslvFmtmhUil1pRDA6kk',
+│   │   │   │   'service_tier': 'default',
+│   │   │   │   'finish_reason': 'stop',
+│   │   │   │   'logprobs': None
+│   │   │   },
+│   │   │   id='lc_run--019cc94a-6885-79e3-b2a1-30ddb08677e9-0',
+│   │   │   tool_calls=[],
+│   │   │   invalid_tool_calls=[],
+│   │   │   usage_metadata={
+│   │   │   │   'input_tokens': 107,
+│   │   │   │   'output_tokens': 18,
+│   │   │   │   'total_tokens': 125,
+│   │   │   │   'input_token_details': {'audio': 0, 'cache_read': 0},
+│   │   │   │   'output_token_details': {'audio': 0, 'reasoning': 0}
+│   │   │   }
+│   │   )
+│   ],
+│   'name': 'Patrick',
+│   'age': 23
+}

@@ -27,6 +27,12 @@ def update_info_user(name: str, age: int, runtime: ToolRuntime) -> Command:
         }
     )
 
+'''- Command — que é uma instrução para o LangGraph modificar o estado do grafo diretamente.
+- update recebe um dict com as chaves do estado que você quer atualizar.
+- ToolRuntime carrega metadados sobre a execução atual da tool.
+- tool_call_id=runtime.tool_call_id é a função retornando qual é o ID dela para fechar o par com a chamada que o LLM abriu.
+'''
+
 @tool
 def read_name_and_age(runtime: ToolRuntime) -> str:
     """Read the name and age of the user from the state."""
@@ -49,6 +55,6 @@ while True:
         break
     response_ = agent.invoke(
         {"messages": [HumanMessage(input_text)]},
-        {"configurable": {"thread_id": "1"}} #  O checkpointer salva um snapshot completo do estado após cada interação
+        {"configurable": {"thread_id": "1"}} #  State acumula: O checkpointer salva um snapshot completo do state após cada interação
     )
     pprint(response_)
