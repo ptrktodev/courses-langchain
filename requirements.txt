@@ -3,8 +3,11 @@ langchain-openai
 langchain-community
 langchain-core
 openai
+llama-index
 python-dotenv
+llama-index-embeddings-google-genai
 pydantic
+llama-index-vector-stores
 tiktoken
 httpx
 requests
