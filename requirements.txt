@@ -5,6 +5,8 @@ langchain-core
 openai
 llama-index
 python-dotenv
+langchain_groq
+langchain-deepseek
 llama-index-embeddings-google-genai
 pydantic
 llama-index-vector-stores
@@ -12,4 +14,6 @@ tiktoken
 httpx
 requests
 rich
+langchain-google-genai
 tavily
+sqlite

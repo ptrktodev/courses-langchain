@@ -1,4 +1,5 @@
 from langchain_openai import ChatOpenAI
+from langchain_google_genai import ChatGoogleGenerativeAI
 from langchain.tools import tool, ToolRuntime
 from langchain.agents import create_agent
 from dataclasses import dataclass
@@ -9,26 +10,29 @@ import os
 
 load_dotenv()
 
-api_key = os.environ['OPENAI_API_KEY']
-llm = ChatOpenAI(model="gpt-4-0613", temperature=0.5)
+api_key_google = os.environ['GOOGLE_API_KEY']
+llm = ChatGoogleGenerativeAI(
+    model="models/gemini-2.5-flash-lite",
+    api_key=api_key_google,
+)
 
 ''''@dataclass # gera automaticamente o __init__ 
 class ColourFavorite:
     colour: str = 'red'''
 
 @dataclass # gera automaticamente o __init__ 
-class ColourFavorite:
-    colour: str 
+class nameUser:
+    name: str 
 
 @tool
-def get_favorite_colour(runtime: ToolRuntime) -> str:
-    """Returns the user's favorite colour."""
-    return runtime.context.colour
+def get_name_user(runtime: ToolRuntime) -> str:
+    """Returns the user's name."""
+    return runtime.context.name
 
 agent = create_agent(
     model=llm,
-    tools=[get_favorite_colour],
-    context_schema=ColourFavorite
+    tools=[get_name_user],
+    context_schema=nameUser
 )
 
 '''response_ = agent.invoke(
@@ -37,8 +41,8 @@ agent = create_agent(
 )'''
 
 response_ = agent.invoke(
-    {"messages": [HumanMessage('What is my favorite colour?')]},
-    context=ColourFavorite(colour='yellow')
+    {"messages": [HumanMessage('What is my name??')]},
+    context=nameUser(name='Patrick')
 )
 
 pprint(response_)

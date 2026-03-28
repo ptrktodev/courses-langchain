@@ -10,7 +10,7 @@ import nest_asyncio
 import os
 import time
 
-# permite rodar código async dentro de outro código async que já está em execução 
+# permite rodar código async dentro de outro código async que já está em execução (llama-index) 
 nest_asyncio.apply()
 
 # tempo atual em segundos com a maior precisão disponível no sistema
@@ -26,7 +26,7 @@ url_qdrant = os.environ['QDRANT_API_URL']
 # definição do modelo default para geração de texto recuperado
 Settings.llm = GoogleGenAI(
     api_key=api_key_google,
-    model="models/gemini-2.5-flash"
+    model="models/gemini-2.5-flash-lite"
 )
 
 # definição do modelo default para embedding

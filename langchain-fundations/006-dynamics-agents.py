@@ -3,7 +3,7 @@ from langchain.agents import create_agent
 from dataclasses import dataclass
 from langchain.tools import tool
 from langchain_core.messages import HumanMessage
-from langchain.agents.middleware import ModelRequest, wrap_model_call, ModelResponse, wrap_tool_call, dynamic_prompt 
+from langchain.agents.middleware import ModelRequest, wrap_model_call, ModelResponse, dynamic_prompt 
 from langgraph.checkpoint.memory import InMemorySaver
 from typing import Callable
 from rich.pretty import pprint
